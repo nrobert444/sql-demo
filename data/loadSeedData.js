@@ -18,7 +18,7 @@ async function run() {
                     INSERT INTO beer (name, brewery, style, url, abv, isSeason)
                     VALUES ($1, $2, $3, $4, $5, $6);
                 `,
-                   
+                
                 [beer.name, beer.brewery, beer.style, beer.url, beer.abv, beer.isSeason]);
 
             })
