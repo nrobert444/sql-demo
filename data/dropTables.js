@@ -11,7 +11,7 @@ async function run() {
         await client.connect();
     
         await client.query(`
-            DROP TABLE IF EXISTS cats;
+            DROP TABLE IF EXISTS beer;
         `);
 
         console.log('drop tables complete');
