@@ -11,6 +11,7 @@ const client = new Client(process.env.DATABASE_URL);
 client.connect();
 // Application Setup
 const app = express();
+app.use(express.static('public'))
 app.use(morgan('dev')); // http logging
 app.use(cors()); // enable CORS request
 // location route
