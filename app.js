@@ -14,9 +14,9 @@ const app = express();
 app.use(morgan('dev')); // http logging
 app.use(cors()); // enable CORS request
 // location route
-app.get('/api/beers', async (req, res) => {
+app.get('/api/beers', async(req, res) => {
     try {
-        const result = await client.query(`SELECT * FROM beers;`);
+        const result = await client.query(`SELECT * FROM beer;`);
         res.json(result.rows);
     }
     catch (err) {
