@@ -15,11 +15,11 @@ async function run() {
             beers.map(beer => {
 
                 return client.query(`
-                    INSERT INTO beer (name, brewery, style, url, abv, is_season)
+                    INSERT INTO beer (name, brewery, style, abv, is_season, url)
                     VALUES ($1, $2, $3, $4, $5, $6);
                 `,
                 
-                [beer.name, beer.brewery, beer.style, beer.url, beer.abv, beer.is_season]);
+                [beer.name, beer.brewery, beer.style, beer.abv, beer.is_season, beer.url]);
 
             })
         );
