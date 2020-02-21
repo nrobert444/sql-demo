@@ -19,14 +19,13 @@ async function run() {
     
         // run a query to create tables
         await client.query(`
-            CREATE TABLE cats (
-                id SERIAL PRIMARY KEY NOT NULL,
-                name VARCHAR(256) NOT NULL,
-                type VARCHAR(256) NOT NULL,
+            CREATE TABLE beer (
+                name SERIAL PRIMARY KEY NOT NULL,
+                brewery VARCHAR(256) NOT NULL,
+                style VARCHAR(256) NOT NULL,
                 url VARCHAR(256) NOT NULL,
-                year INTEGER NOT NULL,
-                lives INTEGER NOT NULL,
-                is_sidekick BOOLEAN NOT NULL
+                abv INTEGER NOT NULL,
+                is_season BOOLEAN NOT NULL
             );
         `);
 

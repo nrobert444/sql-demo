@@ -1,66 +1,59 @@
 module.exports = [
     {
-      name: "Felix",
-      type: "Tuxedo",
-      url: "cats/felix.png",
-      year: 1892,
-      lives: 3,
-      isSidekick: false
+        name: 'Galactic Wrath',
+        brewery: 'Dust Bowl brewing',
+        style: 'IPA',
+        url:'data/images/ipa.png',
+        abv: 7.1,
+        isSeason: true
     },
     {
-      name: "Garfield",
-      type: "Orange Tabby",
-      url: "cats/garfield.jpeg",
-      year: 1978,
-      lives: 7,
-      isSidekick: false
+        name: 'Apathy',
+        brewery: 'Green Bush',
+        style: 'Stout',
+        url:'data/images/stout.png',
+        abv: 8.4,
+        isSeason: true
     },
     {
-      name: "Duchess",
-      type: "Angora",
-      url: "cats/duchess.jpeg",
-      year: 1970,
-      lives: 9,
-      isSidekick: false
+        name: 'Big Bad Wolf',
+        brewery: 'Grimm Brothers',
+        style: 'Imperial Red Ale',
+        url:'data/images/IRA.png',
+        abv: 6.5,
+        isSeason: true
     },
     {
-      name: "Stimpy",
-      type: "Manx",
-      url: "cats/stimpy.jpeg",
-      year: 1990,
-      lives: 1,
-      isSidekick: true
+        name: 'hazy lager',
+        brewery: 'home republic',
+        style: 'Lager',
+        url:'data/images/lager.png',
+        abv: 4.2,
+        isSeason: false
     },
     {
-      name: "Sylvester",
-      type: "Tuxedo",
-      url: "cats/sylvester.jpeg",
-      year: 1945,
-      lives: 1,
-      isSidekick: true
+        name: 'Bj porter',
+        brewery: '3 brothers',
+        style: 'Porter',
+        url: 'data/images/porter.png',
+        abv: 9.2,
+        isSeason: true
     },
     {
-      name: "Tigger",
-      type: "Orange Tabby",
-      url: "cats/tigger.jpeg",
-      year: 1928,
-      lives: 8,
-      isSidekick: false
+        name: 'Arizona trail ale',
+        brewery: 'That brewery',
+        style: 'Pale Ale',
+        url:'data/images/pale ale.png',
+        abv: 5.5,
+        isSeason: false
     },
     {
-      name: "Hello Kitty",
-      type: "Angora",
-      url: "cats/hello-kitty.jpeg",
-      year: 1974,
-      lives: 9,
-      isSidekick: false
-    },
-    {
-      name: "Hobbs",
-      type: "Orange Tabby",
-      url: "cats/hobbs.jpeg",
-      year: 1985,
-      lives: 6,
-      isSidekick: true
+        name: 'Autobahn',
+        brewery: 'Crabtree Brewing',
+        style: 'Dunkel',
+        url: 'data/images/dunkel.png',
+        abv: 8,
+        isSeason: true
     }
-  ];
+    
+];
