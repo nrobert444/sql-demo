@@ -5,7 +5,7 @@ module.exports = [
         style: 'IPA',
         url:'data/images/ipa.png',
         abv: 7.1,
-        isSeason: true
+        is_season: true
     },
     {
         name: 'Apathy',
@@ -13,7 +13,7 @@ module.exports = [
         style: 'Stout',
         url:'data/images/stout.png',
         abv: 8.4,
-        isSeason: true
+        is_season: true
     },
     {
         name: 'Big Bad Wolf',
@@ -21,7 +21,7 @@ module.exports = [
         style: 'Imperial Red Ale',
         url:'data/images/IRA.png',
         abv: 6.5,
-        isSeason: true
+        is_season: true
     },
     {
         name: 'hazy lager',
@@ -29,7 +29,7 @@ module.exports = [
         style: 'Lager',
         url:'data/images/lager.png',
         abv: 4.2,
-        isSeason: false
+        is_season: false
     },
     {
         name: 'Bj porter',
@@ -37,7 +37,7 @@ module.exports = [
         style: 'Porter',
         url: 'data/images/porter.png',
         abv: 9.2,
-        isSeason: true
+        is_season: true
     },
     {
         name: 'Arizona trail ale',
@@ -45,7 +45,7 @@ module.exports = [
         style: 'Pale Ale',
         url:'data/images/pale ale.png',
         abv: 5.5,
-        isSeason: false
+        is_season: false
     },
     {
         name: 'Autobahn',
@@ -53,7 +53,7 @@ module.exports = [
         style: 'Dunkel',
         url: 'data/images/dunkel.png',
         abv: 8,
-        isSeason: true
+        is_season: true
     }
     
 ];

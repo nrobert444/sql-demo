@@ -2,7 +2,7 @@
   "name": "sql-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -19,7 +19,7 @@
   "scripts": {
     "test": "jest --detectOpenHandles",
     "lint": "eslint .",
-    "start": "node index.js",
+    "start": "node app.js",
     "start:watch": "nodemon index.js",
     "create-tables": "node data/create-tables.js",
     "drop-tables": "node data/drop-tables.js",

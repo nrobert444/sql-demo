@@ -13,11 +13,11 @@ async function run() {
     
         await client.query(`
             CREATE TABLE beer (
-                name SERIAL PRIMARY KEY NOT NULL,
+                name VARCHAR(256) PRIMARY KEY NOT NULL,
                 brewery VARCHAR(256) NOT NULL,
                 style VARCHAR(256) NOT NULL,
                 url VARCHAR(256) NOT NULL,
-                abv INTEGER NOT NULL,
+                abv DECIMAL NOT NULL,
                 is_season BOOLEAN NOT NULL
             );
         `);
