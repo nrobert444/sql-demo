@@ -2,6 +2,7 @@ require('dotenv').config();
 const pg = require('pg');
 const Client = pg.Client;
 const beers = require('./beers.js');
+const style = require('./styles.js');
 
 run();
 
@@ -11,15 +12,31 @@ async function run() {
     try {
         await client.connect();
 
+        const savedStyles = await Promise.all(
+            style.map(async style => {
+                const result = await client.query(`
+                    INSERT INTO style (name)
+                    VALUES ($1)
+                    RETURNING *;
+                `,
+                [style]);
+
+                return result.rows[0];
+            })
+        );
         await Promise.all(
             beers.map(beer => {
 
+                const style = savedStyles.find(style => {
+                    return style.name === beer.style;
+                });
+
                 return client.query(`
-                    INSERT INTO beer (name, brewery, style, abv, is_season, url)
-                    VALUES ($1, $2, $3, $4, $5, $6);
+                    INSERT INTO beer (id, name, brewery, style, abv, is_season, url)
+                    VALUES ($1, $2, $3, $4, $5, $6, $7);
                 `,
                 
-                [beer.name, beer.brewery, beer.style, beer.abv, beer.is_season, beer.url]);
+                [style.id, beer.name, beer.brewery, beer.style, beer.abv, beer.is_season, beer.url]);
 
             })
         );

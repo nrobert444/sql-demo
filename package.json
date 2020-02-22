@@ -30,6 +30,7 @@
     "setup-db": "npm run recreate-tables && npm run load-seed-data",
     "eslint": "^6.6.0",
     "nodemon": "^1.19.4"
+  
   },
   "repository": {
     "type": "git",

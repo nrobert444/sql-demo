@@ -12,8 +12,16 @@ async function run() {
         await client.connect();
     
         await client.query(`
+
+        CREATE TABLE style (
+            id SERIAL PRIMARY KEY NOT NULL,
+            name VARCHAR(256) NOT NULL
+        );
+
+
             CREATE TABLE beer (
-                name VARCHAR(256) PRIMARY KEY NOT NULL,
+                id INTEGER PRIMARY KEY NOT NULL,
+                name VARCHAR(256) NOT NULL,
                 brewery VARCHAR(256) NOT NULL,
                 style VARCHAR(256) NOT NULL,
                 url VARCHAR(256) NOT NULL,

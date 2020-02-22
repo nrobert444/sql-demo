@@ -1,5 +1,6 @@
 module.exports = [
-    {
+    {   
+        id: 1,
         name: 'Galactic Wrath',
         brewery: 'Dust Bowl brewing',
         style: 'IPA',
@@ -8,14 +9,16 @@ module.exports = [
         is_season: true
     },
     {
+        id: 2,
         name: 'Apathy',
         brewery: 'Green Bush',
-        style: 'Stout',
+        style: 'IPA',
         url:'https://brewerydb-images.s3.amazonaws.com/beer/TGlWU4/upload_DkxW63-large.png',
         abv: 8.4,
         is_season: true
     },
     {
+        id: 3,
         name: 'Big Bad Wolf',
         brewery: 'Grimm Brothers',
         style: 'Imperial Red Ale',
@@ -24,6 +27,7 @@ module.exports = [
         is_season: true
     },
     {
+        id: 4,
         name: 'hazy lager',
         brewery: 'home republic',
         style: 'Lager',
@@ -32,6 +36,7 @@ module.exports = [
         is_season: false
     },
     {
+        id: 5,
         name: 'Bj porter',
         brewery: '3 brothers',
         style: 'Porter',
@@ -40,6 +45,7 @@ module.exports = [
         is_season: true
     },
     {
+        id: 6,
         name: 'Arizona trail ale',
         brewery: 'That brewery',
         style: 'Pale Ale',
@@ -48,6 +54,7 @@ module.exports = [
         is_season: false
     },
     {
+        id: 7,
         name: 'Autobahn',
         brewery: 'Crabtree Brewing',
         style: 'Dunkel',
