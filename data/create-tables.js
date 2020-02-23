@@ -20,10 +20,10 @@ async function run() {
 
 
             CREATE TABLE beer (
-                id INTEGER PRIMARY KEY NOT NULL,
+                id SERIAL PRIMARY KEY NOT NULL,
                 name VARCHAR(256) NOT NULL,
                 brewery VARCHAR(256) NOT NULL,
-                style VARCHAR(256) NOT NULL,
+                style_id INTEGER NOT NULL REFERENCES style(id),
                 url VARCHAR(256) NOT NULL,
                 abv DECIMAL NOT NULL,
                 is_season BOOLEAN NOT NULL

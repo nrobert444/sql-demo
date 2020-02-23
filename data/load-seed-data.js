@@ -32,11 +32,11 @@ async function run() {
                 });
 
                 return client.query(`
-                    INSERT INTO beer (id, name, brewery, style, abv, is_season, url)
-                    VALUES ($1, $2, $3, $4, $5, $6, $7);
+                    INSERT INTO beer (style_id, name, brewery, abv, is_season, url)
+                    VALUES ($1, $2, $3, $4, $5, $6);
                 `,
                 
-                [style.id, beer.name, beer.brewery, beer.style, beer.abv, beer.is_season, beer.url]);
+                [style.id, beer.name, beer.brewery, beer.abv, beer.is_season, beer.url]);
 
             })
         );
