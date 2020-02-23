@@ -7,7 +7,6 @@ const pg = require('pg');
 const Client = pg.Client;
 const client = new Client(process.env.DATABASE_URL);
 client.connect();
-// Application Setup
 const app = express();
 app.use(express.static('public'));
 app.use(morgan('dev')); // http logging
@@ -76,4 +75,23 @@ app.get('/api/beer/:myBeerId', async (req, res) => {
         });
     }
 });
+
+app.get('/api/styles', async (req, res) => {
+    try {
+        const result = await client.query(`
+            SELECT *
+            FROM style
+            ORDER BY name;
+        `);
+
+        res.json(result.rows);
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            error: err.message || err
+        });
+    }
+});
+
 module.exports = { app, };
