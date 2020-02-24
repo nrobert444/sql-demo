@@ -44,7 +44,7 @@ app.post('/api/beers', async(req, res) => {
             RETURNING *;
         `,
         // pass the values in an array so that pg.Client can sanitize them
-        [req.body.styleId, req.body.name, req.body.brewery, req.body.style, req.body.url, req.body.abv, req.body.is_season]
+        [req.body.style_id, req.body.name, req.body.brewery, req.body.style, req.body.url, req.body.abv, req.body.is_season]
         );
         res.json(result.rows[0]); // return just the first result of our query
     }
@@ -54,7 +54,7 @@ app.post('/api/beers', async(req, res) => {
         });
     }
 });
-app.get('/api/beer/:myBeerId', async(req, res) => {
+app.get('/api/beer/:beerId', async(req, res) => {
     try {
         const result = await client.query(`
             SELECT *
@@ -62,7 +62,7 @@ app.get('/api/beer/:myBeerId', async(req, res) => {
             WHERE beer.id=$1`, 
             // the second parameter is an array of values to be SANITIZED then inserted into the query
             // i only know this because of the `pg` docs
-        [req.params.myBeerId]);
+        [req.params.beerId]);
         res.json(result.rows);
     }
     catch (err) {
