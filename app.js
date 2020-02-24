@@ -12,10 +12,10 @@ app.use(express.static('public'));
 app.use(morgan('dev')); // http logging
 app.use(cors()); // enable CORS request\
 app.use(express.json()); // enable reading incoming json data
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
 // location route
 
-app.get('/api/beers', async (req, res) => {
+app.get('/api/beers', async(req, res) => {
     try {
         const result = await client.query(`
             SELECT
@@ -23,22 +23,20 @@ app.get('/api/beers', async (req, res) => {
                 s.name as style
             FROM beer b
             JOIN style s
-            ON   b.type_id = s.id;
+            ON   b.style_id = s.id;
         `);
         res.json(result.rows);
     }
     catch (err) {
-        console.log(err);
         res.status(500).json({
             error: err.message || err
         });
     }
 });
 // using .post instead of get
-app.post('/api/beers', async (req, res) => {
+app.post('/api/beers', async(req, res) => {
     // using req.body instead of req.params or req.query (which belong to /GET requests)
     try {
-        console.log(req.body);
         // make a new cat out of the cat that comes in req.body;
         const result = await client.query(`
             INSERT INTO beer (style_id, name, brewery, style, url, abv, is_season)
@@ -51,13 +49,12 @@ app.post('/api/beers', async (req, res) => {
         res.json(result.rows[0]); // return just the first result of our query
     }
     catch (err) {
-        console.log(err);
         res.status(500).json({
             error: err.message || err
         });
     }
 });
-app.get('/api/beer/:myBeerId', async (req, res) => {
+app.get('/api/beer/:myBeerId', async(req, res) => {
     try {
         const result = await client.query(`
             SELECT *
@@ -69,14 +66,13 @@ app.get('/api/beer/:myBeerId', async (req, res) => {
         res.json(result.rows);
     }
     catch (err) {
-        console.log(err);
         res.status(500).json({
             error: err.message || err
         });
     }
 });
 
-app.get('/api/styles', async (req, res) => {
+app.get('/api/styles', async(req, res) => {
     try {
         const result = await client.query(`
             SELECT *
@@ -87,7 +83,6 @@ app.get('/api/styles', async (req, res) => {
         res.json(result.rows);
     }
     catch (err) {
-        console.log(err);
         res.status(500).json({
             error: err.message || err
         });

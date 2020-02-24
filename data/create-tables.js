@@ -29,11 +29,8 @@ async function run() {
                 is_season BOOLEAN NOT NULL
             );
         `);
-
-        console.log('create tables complete');
     }
-    catch (err) {
-        
+    catch (err) {  
         console.log(err);
     }
     finally {
