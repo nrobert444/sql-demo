@@ -63,8 +63,7 @@ app.put('/api/beers', async(req, res) => {
         // make a new cat out of the cat that comes in req.body;
         const result = await client.query(`
             UPDATE beer 
-            SET 
-                name = '${req.body.name}',
+            SET name = '${req.body.name}',
                 brewery = '${req.body.brewery}',
                 style_id = '${req.body.style_id}',
                 url = '${req.body.url}',
@@ -73,7 +72,6 @@ app.put('/api/beers', async(req, res) => {
             WHERE id = ${req.body.id};
         `,
         );
-        console.log(result);
         res.json(result.rows[0]); // return just the first result of our query
     }
     catch (err) {
