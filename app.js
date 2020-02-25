@@ -59,6 +59,7 @@ app.post('/api/beers', async(req, res) => {
 app.put('/api/beers', async(req, res) => {
     // using req.body instead of req.params or req.query (which belong to /GET requests)
     try {
+        console.log(req.body);
         // make a new cat out of the cat that comes in req.body;
         const result = await client.query(`
             UPDATE beer 
@@ -72,6 +73,7 @@ app.put('/api/beers', async(req, res) => {
             WHERE id=${req.body.id};
         `,
         );
+        console.log(result);
         res.json(result.rows[0]); // return just the first result of our query
     }
     catch (err) {
