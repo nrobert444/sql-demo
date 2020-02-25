@@ -64,13 +64,13 @@ app.put('/api/beers', async(req, res) => {
         const result = await client.query(`
             UPDATE beer 
             SET 
-                name='${req.body.name}',
-                brewery='${req.body.brewery}',
-                style_id=${req.body.style_id},
-                url='${req.body.url}',
-                abv=${req.body.abv},
-                is_season=${req.body.is_season},
-            WHERE id=${req.body.id};
+                name = '${req.body.name}',
+                brewery = '${req.body.brewery}',
+                style_id = '${req.body.style_id}',
+                url = '${req.body.url}',
+                abv = '${req.body.abv}',
+                is_season = '${req.body.is_season}',
+            WHERE id = ${req.body.id};
         `,
         );
         console.log(result);
