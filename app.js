@@ -69,7 +69,7 @@ app.put('/api/beers', async(req, res) => {
                 url='${req.body.url}',
                 abv=${req.body.abv},
                 is_season=${req.body.is_season},
-            WHERE id=${req.body.id};
+            WHERE id=${req.body.beerId};
         `,
         );
         res.json(result.rows[0]); // return just the first result of our query
