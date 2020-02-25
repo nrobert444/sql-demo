@@ -37,14 +37,15 @@ app.get('/api/beers', async(req, res) => {
 app.post('/api/beers', async(req, res) => {
     // using req.body instead of req.params or req.query (which belong to /GET requests)
     try {
+        console.log(req.body);
         // make a new cat out of the cat that comes in req.body;
         const result = await client.query(`
-            INSERT INTO beer (style_id, name, brewery, style, url, abv, is_season)
-            VALUES ($1, $2, $3, $4, $5, $6, $7)
+            INSERT INTO beer (style_id, name, brewery, url, abv, is_season)
+            VALUES ($1, $2, $3, $4, $5, $6)
             RETURNING *;
         `,
         // pass the values in an array so that pg.Client can sanitize them
-        [req.body.style_id, req.body.name, req.body.brewery, req.body.style, req.body.url, req.body.abv, req.body.is_season]
+        [req.body.style_id, req.body.name, req.body.brewery, req.body.url, req.body.abv, req.body.is_season]
         );
         res.json(result.rows[0]); // return just the first result of our query
     }
@@ -64,7 +65,7 @@ app.put('/api/beers', async(req, res) => {
             SET 
                 name = ${req.body.name},
                 brewery = ${req.body.brewery},
-                style_id = ${req.body.style},
+                style_id = ${req.body.style_id},
                 url = ${req.body.url},
                 abv = ${req.body.abv},
                 is_season = ${req.body.is_season}
