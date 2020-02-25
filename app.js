@@ -68,7 +68,7 @@ app.put('/api/beers', async(req, res) => {
                 style_id = '${req.body.style_id}',
                 url = '${req.body.url}',
                 abv = '${req.body.abv}',
-                is_season = '${req.body.is_season}',
+                is_season = '${req.body.is_season}'
             WHERE id = ${req.body.id};
         `,
         );
